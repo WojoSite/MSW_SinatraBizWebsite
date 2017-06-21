@@ -25,6 +25,16 @@ puts "\n*** my database ***"
 puts my_db
 end
 
+product_catalogue = [
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
+  {:prodid => nil, :prodname => nil, :price => nil, :image => nil}
+]
+
 # ======= home =======
 get '/' do
   puts "\n******* home *******"
@@ -44,9 +54,9 @@ get '/catalogue' do
 end
 
 # ======= forms =======
-get '/signupform' do
-  puts "\n******* login *******"
-  erb :signupform
+get '/signinform' do
+  puts "\n******* signinform *******"
+  erb :signinform
 end
 
 # ======= login =======

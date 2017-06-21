@@ -43,11 +43,11 @@ a{
   width: 100px;
   margin: 0 10px;
   color: white;
-  border: 1px solid black;
   border-radius: 6px;
   text-align: center;
   background-color: #3333ff;
   font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .menu-item:hover{
   background-color: #4d4dff;
@@ -61,6 +61,48 @@ a{
 }
 #yield-container{
   padding: 20px;
+}
+#sign-in-container{
+  height: auto;
+  width: 400px;
+  margin: 40px auto;
+  justify-content: center;
+}
+#sign-in-form{
+text-align: center;
+}
+.input-area{
+  height: 50px;
+  margin: 10px;
+  width: 250px;
+  font-size: 20px;
+  font-weight: bold;
+  border-style: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+#submit-button{
+  display: block;
+  margin: 20px auto;
+  height: 50px;
+  width: 250px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 20px;
+  background-color: #3333ff;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#submit-button:hover{
+  background-color: #4d4dff;
+}
+#submit-button:active{
+  background-color: #0000b3;
 }
 #footer-container{
   position: fixed;
