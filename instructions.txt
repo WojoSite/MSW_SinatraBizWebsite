@@ -1,0 +1,21 @@
+Create business website with these specifications:
+    • 4 separate pages (views):
+        • Home page
+            - name of business
+            - Welcome message with name of user (after form submission)
+        • Profile page
+            - Display of user information (from form data)
+        • Catalogue
+            - Display grid of images (products, locations, artists... depending on selected business)
+            - optional order form checkboxes for gallery items
+        • Forms page
+            - user data form (e.g. firstname, lastname, usertype, username, password)
+            - submit button for user data
+            - product data form (e.e. product name, make, model...)
+            - submit button for product data
+    • Dynamic conditional menus (depends on usertype)
+        - display a main menu for general users
+        - display a special menu for administrators (additional links to "Membership", "SiteAdmin")
+    • Class variables
+        @@users [user1, user2 ...]
+        @@products [product1, product2 ...]

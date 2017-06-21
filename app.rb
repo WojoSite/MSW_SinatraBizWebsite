@@ -2,8 +2,6 @@
 require "sinatra"
 require 'sinatra/activerecord'
 require "sinatra/reloader" if development?
-require 'rainbow'
-require 'geokit'
 
 # ======= database =======
 # set :database, "sqlite3:portfolio.db"  # sets the db name (will be created if it does not exist)
@@ -26,18 +24,26 @@ formatted_lorem = my_lorem.gsub(/[.,]/,"").split
 puts "\n*** my database ***"
 puts my_db
 end
+
 # ======= home =======
 get '/' do
   puts "\n******* home *******"
   erb :home
 end
 
-get '/home' do
-  puts "\n******* home *******"
-  erb :home
+# ======= profile =======
+get '/profile' do
+  puts "\n******* profile *******"
+  erb :profile
 end
 
-# ======= login =======
+# ======= catalogue =======
+get '/catalogue' do
+  puts "\n******* catalogue *******"
+  erb :catalogue
+end
+
+# ======= forms =======
 get '/signupform' do
   puts "\n******* login *******"
   erb :signupform
