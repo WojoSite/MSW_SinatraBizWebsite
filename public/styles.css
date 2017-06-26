@@ -1,0 +1,65 @@
+body{
+  margin: 0;
+}
+#menu-container{
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#company-logo{
+  height: 80px;
+  margin: 0;
+  float: left;
+}
+#logo-text{
+  margin: 0;
+  font-size: 28px;
+  line-height: 40px;
+  color: black;
+}
+#menu-items{
+  float: right;
+}
+a{
+  text-decoration: none;
+  text-align: center;
+}
+.menu-item{
+  margin: 0 10px;
+  padding: 10px;
+  display: inline-block;
+  height: 20px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: #ff0000;
+  color: white;
+}
+
+.menu-item:hover{
+  background-color: #ff6666;
+}
+
+.menu-item:active{
+  background-color: #b30000;
+}
+
+.yield-section{
+  text-align: center;
+}
+
+#gallery-container{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#gallery-item{
+  height: 300px;
+  width: 300px;
+}
+
+#gallery-item > img{
+  height: 100%;
+}

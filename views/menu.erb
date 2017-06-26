@@ -1,7 +1,14 @@
 <!-- ======= views/menu.erb ======= -->
 
-<% menu_items = ["home", "profile", "portfolio", "resume", "interests"] %>
+<% menu_items = ["about", "gallery", "contact"] %>
+
+<a href=<%= :home %>>
+  <div id="company-logo">
+    <p id="logo-text">WojoCorp.</p>
+  </div>
+</a>
 <div id="menu-items">
+
   <% for x in menu_items %>
     <a href=<%= x %>>
       <div class="menu-item"> <%= x %> </div>

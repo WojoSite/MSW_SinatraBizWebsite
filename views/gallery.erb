@@ -1,0 +1,9 @@
+<h1>WojoCorp Gallery</h1>
+<% images = ["billiards.jpg", "chess.jpg", "dance.jpg", "koreanfood.jpg", "toddler.jpg", "wedding.jpg", "wojo.jpg"] %>
+<div id="gallery-container">
+  <% for x in images %>
+    <div id="gallery-item">
+      <img src="images/<%= x %>" alt="<%= x %>">
+    </div>
+  <% end %>
+</div>
