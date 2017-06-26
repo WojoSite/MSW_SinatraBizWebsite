@@ -1,0 +1,16 @@
+<!-- ======= views/menu.erb ======= -->
+
+<% menu_items = ["home", "profile", "portfolio", "resume", "interests"] %>
+<div id="menu-items">
+  <% for x in menu_items %>
+    <a href=<%= x %>>
+      <div class="menu-item"> <%= x %> </div>
+    </a>
+  <% end %>
+</div>
+
+<!-- <div class="menu-item">home</div>
+<div class="menu-item">profile</div>
+<div class="menu-item">portfolio</div>
+<div class="menu-item">resume</div>
+<div class="menu-item">interests</div> -->

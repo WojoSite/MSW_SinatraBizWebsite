@@ -2,61 +2,41 @@
 require "sinatra"
 require 'sinatra/activerecord'
 require "sinatra/reloader" if development?
+require 'rainbow'
+require 'geokit'
 
-# ======= database =======
-# set :database, "sqlite3:portfolio.db"  # sets the db name (will be created if it does not exist)
-def db_maker
-my_db = []
-my_lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-formatted_lorem = my_lorem.gsub(/[.,]/,"").split
-  (0..4).each do |i|
-    user_data = {}
-    counter = i * 5
-    user_data[:id] = i+1  # {:id=>1}
-    user_data[:fname] = formatted_lorem[counter]
-    user_data[:lname] = formatted_lorem[counter+1]
-    user_data[:uname] = formatted_lorem[counter+2]
-    user_data[:password] = formatted_lorem[counter+3]
-    user_data[:utype] = formatted_lorem[counter+4]
-    my_db << user_data
-    user_data = {}
-  end
-puts "\n*** my database ***"
-puts my_db
+# ======= rainbow =======
+puts "Who was the first president of the united states?"
+answer = gets.chomp.downcase
+if answer == "gw"
+    puts Rainbow('That is the correct answer').yellow
+else
+    puts Rainbow('That is the wrong answer').red
 end
 
-product_catalogue = [
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil},
-  {:prodid => nil, :prodname => nil, :price => nil, :image => nil}
-]
+# ======= geokit =======
+address = Geokit::Geocoders::GoogleGeocoder.geocode '2101 New Hampshire Ave NW, Washington, DC'
+puts "\naddress:\n#{address}"
+address = Geokit::Geocoders::GoogleGeocoder.geocode '1 Windsor St, Andover, MA'
+puts "\naddress:\n#{address}"
 
+# ======= database =======
+set :database, "sqlite3:portfolio.db"  # sets the db name (will be created if it does not exist)
 # ======= home =======
 get '/' do
   puts "\n******* home *******"
   erb :home
 end
 
-# ======= profile =======
-get '/profile' do
-  puts "\n******* profile *******"
-  erb :profile
+get '/home' do
+  puts "\n******* home *******"
+  erb :home
 end
 
-# ======= catalogue =======
-get '/catalogue' do
-  puts "\n******* catalogue *******"
-  erb :catalogue
-end
-
-# ======= forms =======
-get '/signinform' do
-  puts "\n******* signinform *******"
-  erb :signinform
+# ======= login =======
+get '/signupform' do
+  puts "\n******* login *******"
+  erb :signupform
 end
 
 # ======= login =======
